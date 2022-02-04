@@ -58,9 +58,9 @@ async def answer(bot, query):
                 reply_markup=reply_markup))
 
     if results:
-        switch_pm_text = f"{emoji.FILE_FOLDER} Sonuç - {total}"
+        switch_pm_text = f"{emoji.FILE_FOLDER} Sonuçlar - {total}"
         if string:
-            switch_pm_text += f" {string}"
+            switch_pm_text += f' "{string}"'
         try:
             await query.answer(results=results,
                            is_personal = True,
@@ -91,7 +91,7 @@ async def answer(bot, query):
 def get_reply_markup(query):
     buttons = [
         [
-            InlineKeyboardButton('Tekrar ara', switch_inline_query_current_chat=query)
+            InlineKeyboardButton('Tekrar Ara', switch_inline_query_current_chat=query)
         ]
         ]
     return InlineKeyboardMarkup(buttons)
